@@ -78,30 +78,18 @@ const SecondaryButton = styled(Link)`
   }
 `;
 
-const ExternalLink = styled.a`
-  padding: 0.8rem 1.5rem;
-  background-color: rgba(22, 34, 56, 0.8);
-  border-radius: 8px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  display: inline-block;
-  
-  &:hover {
-    background-color: var(--accent-color-orange);
-    transform: translateY(-2px);
-  }
-`;
-
-const PlaylistSection = styled.div`
+const PlaylistSection = styled.a`
   position: fixed;
   top: 2rem;
   right: 2rem;
   width: 300px;
-  background-color: rgba(22, 34, 56, 0.7);
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
   
   &:hover {
     transform: translateY(-5px);
@@ -114,32 +102,43 @@ const PlaylistSection = styled.div`
   }
 `;
 
-const PlaylistImage = styled.div`
-  height: 200px;
-  background-color: #333;
-  position: relative;
-  overflow: hidden;
-  
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-`;
-
 const PlaylistContent = styled.div`
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   padding: 1.5rem;
+  aspect-ratio: 3/4;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+    z-index: 1;
+  }
 `;
 
 const PlaylistTitle = styled.h2`
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
 `;
 
 const PlaylistText = styled.p`
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
 `;
 
 const AboutSection = styled.section`
@@ -204,22 +203,16 @@ const HomePage: React.FC = () => {
         </AboutText>
       </AboutSection>
       
-      <PlaylistSection>
-        <PlaylistImage>
-          <img src="/images/DSCF0099.JPG" alt="Playlist" />
-        </PlaylistImage>
-        <PlaylistContent>
+      <PlaylistSection 
+        href="https://open.spotify.com/playlist/3Bb09BH70g8lvmyWFAA06z?si=88da25081eef4d2d" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        <PlaylistContent style={{ backgroundImage: `url('/images/DSCF0099.JPG')` }}>
           <PlaylistTitle>Playlist.</PlaylistTitle>
           <PlaylistText>
             These are the songs I listen to regularly, depending on my mood.
           </PlaylistText>
-          <ExternalLink 
-            href="https://open.spotify.com/playlist/3Bb09BH70g8lvmyWFAA06z?si=88da25081eef4d2d" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            Listen on Spotify
-          </ExternalLink>
         </PlaylistContent>
       </PlaylistSection>
     </HomeContainer>
