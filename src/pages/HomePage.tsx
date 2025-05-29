@@ -179,8 +179,8 @@ const HomePage: React.FC = () => {
         </ActionButtons>
         
         <SocialLinks 
-          githubUrl="https://github.com"
-          linkedinUrl="https://linkedin.com"
+          githubUrl="https://github.com/WillyOwl"
+          linkedinUrl="https://www.linkedin.com/in/willy-zuo-66935632a/"
           email="zuowilly@gmail.com"
         />
       </HeroSection>
