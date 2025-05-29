@@ -84,7 +84,7 @@ const Sidebar: React.FC = () => {
   return (
     <SidebarContainer>
       <ProfileImage to="/">
-        <img src="/images/profile.jpg" alt="Profile" />
+        <img src="/images/profile.jpg" alt="Willy Zuo" />
       </ProfileImage>
       
       <NavItems>
