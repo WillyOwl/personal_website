@@ -175,7 +175,7 @@ const HomePage: React.FC = () => {
         
         <ActionButtons>
           <PrimaryButton to="/guestbook">Sign my guestbook</PrimaryButton>
-          <SecondaryButton to="mailto:zuowilly@gmail.com">Send an private email →</SecondaryButton>
+          <SecondaryButton to="mailto:zuowilly@gmail.com">Send a private email →</SecondaryButton>
         </ActionButtons>
         
         <SocialLinks 

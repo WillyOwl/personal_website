@@ -37,9 +37,23 @@ const ProfileImage = styled(Link)`
   justify-content: center;
   border: 2px solid transparent;
   transition: border-color 0.3s ease;
+  position: relative;
 
   &:hover {
     border-color: var(--accent-color-orange);
+  }
+
+  &:hover::after {
+    content: 'Home';
+    position: absolute;
+    left: 60px;
+    background-color: rgba(22, 34, 56, 0.9);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
 
   img {
@@ -56,7 +70,7 @@ const NavItems = styled.nav`
   margin-top: 1rem;
 `;
 
-const NavItem = styled(Link)<{ $active?: boolean }>`
+const NavItem = styled(Link)<{ $active?: boolean; $tooltip: string }>`
   width: 40px;
   height: 40px;
   display: flex;
@@ -66,11 +80,25 @@ const NavItem = styled(Link)<{ $active?: boolean }>`
   color: ${props => props.$active ? 'var(--accent-color-orange)' : 'var(--text-color)'};
   background-color: ${props => props.$active ? 'rgba(255, 255, 255, 0.1)' : 'transparent'};
   transition: all 0.3s ease;
+  position: relative;
 
   &:hover {
     color: var(--accent-color-orange);
     background-color: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
+  }
+
+  &:hover::after {
+    content: '${props => props.$tooltip}';
+    position: absolute;
+    left: 50px;
+    background-color: rgba(22, 34, 56, 0.9);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
 `;
 
@@ -88,27 +116,27 @@ const Sidebar: React.FC = () => {
       </ProfileImage>
       
       <NavItems>
-        <NavItem to="/" $active={isActive('/')}>
+        <NavItem to="/" $active={isActive('/')} $tooltip="Home">
           <FontAwesomeIcon icon={faHome} size="lg" />
         </NavItem>
         
-        <NavItem to="/projects" $active={isActive('/projects')}>
+        <NavItem to="/projects" $active={isActive('/projects')} $tooltip="Projects">
           <FontAwesomeIcon icon={faLaptopCode} size="lg" />
         </NavItem>
         
-        <NavItem to="/photography" $active={isActive('/photography')}>
+        <NavItem to="/photography" $active={isActive('/photography')} $tooltip="Photography">
           <FontAwesomeIcon icon={faCamera} size="lg" />
         </NavItem>
         
-        <NavItem to="/guestbook" $active={isActive('/guestbook')}>
+        <NavItem to="/guestbook" $active={isActive('/guestbook')} $tooltip="Guestbook">
           <FontAwesomeIcon icon={faComments} size="lg" />
         </NavItem>
         
-        <NavItem to="/blog" $active={isActive('/blog')}>
+        <NavItem to="/blog" $active={isActive('/blog')} $tooltip="Blog">
           <FontAwesomeIcon icon={faBlog} size="lg" />
         </NavItem>
         
-        <NavItem to="/books" $active={isActive('/books')}>
+        <NavItem to="/books" $active={isActive('/books')} $tooltip="Books">
           <FontAwesomeIcon icon={faBook} size="lg" />
         </NavItem>
       </NavItems>
