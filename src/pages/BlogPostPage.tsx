@@ -114,6 +114,10 @@ const BlogContent = styled.div`
   p {
     margin-bottom: 1.5rem;
   }
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
 `;
 
 const NotFoundMessage = styled.div`
@@ -183,7 +187,9 @@ const BlogPostPage: React.FC = () => {
         )}
         
         <BlogContent>
-          <p>{post.content}</p>
+          {post.content.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
         </BlogContent>
       </ContentWrapper>
     </PageContainer>
