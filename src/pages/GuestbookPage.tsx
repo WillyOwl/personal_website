@@ -272,13 +272,81 @@ const AdminTriggerText = styled.p`
   font-style: italic;
 `;
 
+const PasswordModal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+`;
+
+const PasswordForm = styled.div`
+  background-color: rgba(22, 34, 56, 0.95);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+`;
+
+const PasswordTitle = styled.h3`
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  text-align: center;
+`;
+
+const ErrorMessage = styled.div`
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+  padding: 0.8rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+`;
+
+const ButtonGroup = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+`;
+
+const PasswordButton = styled.button<{ $primary?: boolean }>`
+  background-color: ${props => props.$primary ? '#4285f4' : 'transparent'};
+  color: ${props => props.$primary ? 'white' : 'rgba(255, 255, 255, 0.7)'};
+  border: ${props => props.$primary ? 'none' : '1px solid rgba(255, 255, 255, 0.3)'};
+  border-radius: 6px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: ${props => props.$primary ? '#3367d6' : 'rgba(255, 255, 255, 0.1)'};
+  }
+`;
+
+// The password (plain text for simplicity)
+// In a real app, you would use a secure hashing method and store this server-side
+const ADMIN_PASSWORD = "willy2003";
+
 const GuestbookPage: React.FC = () => {
   const [name, setName] = useState('');
   const [feedback, setFeedback] = useState('');
   const [entries, setEntries] = useState<GuestbookEntry[]>([]);
   const [showSuccess, setShowSuccess] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [adminClickCount, setAdminClickCount] = useState(0);
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
+  const [password, setPassword] = useState('');
+  const [passwordError, setPasswordError] = useState('');
 
   // Load entries from localStorage on component mount
   useEffect(() => {
@@ -356,14 +424,29 @@ const GuestbookPage: React.FC = () => {
   };
 
   const handleAdminTriggerClick = () => {
-    setAdminClickCount(prevCount => {
-      const newCount = prevCount + 1;
-      if (newCount >= 3) {
-        toggleAdminMode();
-        return 0;
-      }
-      return newCount;
-    });
+    setShowPasswordModal(true);
+  };
+  
+  const handlePasswordSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (password === ADMIN_PASSWORD) {
+      // Password is correct
+      setShowPasswordModal(false);
+      setPassword('');
+      setPasswordError('');
+      setIsAdmin(true);
+      localStorage.setItem('guestbookAdminMode', 'true');
+    } else {
+      // Password is incorrect
+      setPasswordError('Incorrect password. Please try again.');
+    }
+  };
+  
+  const closePasswordModal = () => {
+    setShowPasswordModal(false);
+    setPassword('');
+    setPasswordError('');
   };
   
   const clearAllEntries = () => {
@@ -447,7 +530,7 @@ const GuestbookPage: React.FC = () => {
           )}
         </EntriesSection>
         
-        {/* Admin trigger area - click 3 times to toggle admin mode */}
+        {/* Admin trigger area - click to show password modal */}
         <AdminTriggerArea onClick={handleAdminTriggerClick}>
           <AdminTriggerText>
             {isAdmin ? "Administrator mode is active" : "Website owner access"}
@@ -467,6 +550,40 @@ const GuestbookPage: React.FC = () => {
               </AdminButton>
             </div>
           </AdminControls>
+        )}
+        
+        {/* Password Modal */}
+        {showPasswordModal && (
+          <PasswordModal>
+            <PasswordForm>
+              <PasswordTitle>Administrator Access</PasswordTitle>
+              <form onSubmit={handlePasswordSubmit}>
+                <FormGroup>
+                  <Label htmlFor="password">Enter Password</Label>
+                  <Input 
+                    type="password" 
+                    id="password" 
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    autoFocus
+                    required
+                  />
+                </FormGroup>
+                
+                {passwordError && <ErrorMessage>{passwordError}</ErrorMessage>}
+                
+                <ButtonGroup>
+                  <PasswordButton type="button" onClick={closePasswordModal}>
+                    Cancel
+                  </PasswordButton>
+                  <PasswordButton type="submit" $primary>
+                    Login
+                  </PasswordButton>
+                </ButtonGroup>
+              </form>
+            </PasswordForm>
+          </PasswordModal>
         )}
       </ContentWrapper>
     </PageContainer>
