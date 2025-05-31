@@ -208,7 +208,7 @@ const HomePage: React.FC = () => {
         target="_blank" 
         rel="noopener noreferrer"
       >
-        <PlaylistContent style={{ backgroundImage: `url('/images/DSCF0099.JPG')` }}>
+        <PlaylistContent style={{ backgroundImage: `url('/images/playlist/DSCF0099.JPG')` }}>
           <PlaylistTitle>Playlist.</PlaylistTitle>
           <PlaylistText>
             These are the songs I listen to regularly, depending on my mood.

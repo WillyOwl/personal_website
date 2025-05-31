@@ -191,52 +191,61 @@ const PhotographyPage: React.FC = () => {
   const photosData: Photo[] = [
     {
       id: '1',
-      title: 'Sunset at the Beach',
-      image: '/images/photography/sunset.jpg',
-      year: '2023',
-      genre: 'landscape',
-      notes: 'Captured during a summer evening in California.'
+      title: 'Curious cat on the perch',
+      image: '/images/photography/cat.JPG',
+      year: '2025',
+      genre: 'portrait',
+      notes: 'Captured in a friend\'s house.'
     },
     {
       id: '2',
-      title: 'City Lights',
-      image: '/images/photography/city.jpg',
-      year: '2022',
-      genre: 'architecture',
-      notes: 'Downtown skyline at night with long exposure.'
+      title: 'Passing Moments',
+      image: '/images/photography/moment.JPG',
+      year: '2025',
+      genre: 'street',
+      notes: 'Exceptional moment at SUB of UofA.'
     },
     {
       id: '3',
-      title: 'Mountain Range',
-      image: '/images/photography/mountain.jpg',
-      year: '2023',
-      genre: 'landscape',
-      notes: 'Hiking trip to the Rockies.'
+      title: 'Silence',
+      image: '/images/photography/silence.JPG',
+      year: '2025',
+      genre: 'portrait',
+      notes: 'A little picture of my friend in the car.'
     },
     {
       id: '4',
-      title: 'Street Market',
-      image: '/images/photography/market.jpg',
-      year: '2022',
+      title: 'Edmonton Blue Vibes',
+      image: '/images/photography/bluevibes.JPG',
+      year: '2025',
       genre: 'street',
-      notes: 'Local vendors at a weekend market.'
+      notes: 'Blue vibes in Edmonton.'
     },
     {
       id: '5',
-      title: 'Wildlife',
-      image: '/images/photography/wildlife.jpg',
-      year: '2021',
-      genre: 'nature',
-      notes: 'Bird watching at the national park.'
+      title: 'Chancellor',
+      image: '/images/photography/chancellor.JPG',
+      year: '2025',
+      genre: 'street',
+      notes: 'As you see, this is a chacellor\'s walk sign.'
     },
     {
       id: '6',
-      title: 'Historic Building',
-      image: '/images/photography/building.jpg',
-      year: '2021',
-      genre: 'architecture',
-      notes: 'Gothic architecture from the 18th century.'
-    }
+      title: 'Light & Shadow',
+      image: '/images/photography/lights_shadows.JPG',
+      year: '2025',
+      genre: 'street',
+      notes: 'An unknown corner in UofA.'
+    },
+    {
+      id: '7',
+      title: 'Between Walls and Walks',
+      image: '/images/photography/walls_walks.JPG',
+      year: '2025',
+      genre: 'street',
+      notes: 'Interesting moment captured at CCIS, UofA.'
+    },
+    
   ];
   
   const [activeCategory, setActiveCategory] = useState<string>('all');
