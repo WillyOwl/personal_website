@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMicrophone, faHeartPulse } from '@fortawesome/free-solid-svg-icons';
 
 const PageContainer = styled.div`
   max-width: 1200px;
@@ -47,19 +45,6 @@ const ProjectCard = styled.div`
 
 const ProjectHeader = styled.div`
   padding: 2rem;
-`;
-
-const IconWrapper = styled.div`
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: rgba(30, 41, 59, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  color: #fff;
-  font-size: 1.5rem;
 `;
 
 const ProjectTitle = styled.h2`

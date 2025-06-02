@@ -78,13 +78,6 @@ const BlogDate = styled.span`
   margin-bottom: 3rem;
 `;
 
-const Divider = styled.div`
-  width: 100%;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.1);
-  margin: 2rem 0;
-`;
-
 const QuoteBlock = styled.blockquote`
   background-color: rgba(22, 34, 56, 0.7);
   border-left: 4px solid #4285f4;
