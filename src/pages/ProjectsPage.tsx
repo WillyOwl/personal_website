@@ -120,6 +120,32 @@ const ProjectsPage: React.FC = () => {
         </ProjectsGrid>
       </PageContent>
 
+      <PageContent>Add commentMore actions
+        <ProjectsGrid>
+          <ProjectCard>
+            <ProjectHeader>
+           
+              <ProjectTitle>Slack Bot</ProjectTitle>
+              <ProjectDescription>
+                <p>
+                This project involves the development of AipoBot, an agentic Slack assistant designed to respond to messages and perform tasks using external APIs. The bot integrates seamlessly with Slack, where it responds to direct messages and mentions in channels. It leverages GPT models from OpenAI to generate helpful responses, ensuring intelligent and context-aware interactions with users. Additionally, AipoBot can fetch real-time weather data for any location by utilizing the OpenWeatherMap API, providing users with up-to-date weather conditions.
+                </p>
+                <p>
+                AipoBot operates on a modular architecture that includes several layers. The Slack Bot Layer is responsible for handling Slack events and messages, ensuring smooth communication between the bot and Slack users. The LLM Layer processes user input, leveraging powerful language models to generate appropriate and insightful responses. Finally, the Tool Layer integrates with external APIs, such as the weather API, to enable the bot to fulfill various user requests with relevant, real-time data.
+                </p>
+                <p>
+                 The tech stack for this project consists of Python for backend development, LangChain and OpenAI for language model integration, Slack Bolt for Python to manage interactions within Slack, and OpenWeatherMap for weather data retrieval. The bot’s agentic capabilities enable it to analyze user intent and use the most appropriate tools to fulfill requests efficiently.
+                </p>
+
+              </ProjectDescription>
+              <ProjectButton href="https://github.com/WillyOwl/Slack-Bot" target="_blank" rel="noopener noreferrer">
+                View Github <span>→</span>
+              </ProjectButton>
+            </ProjectHeader>
+          </ProjectCard>
+
+        </ProjectsGrid>
+      </PageContent>
     </PageContainer>
   );
 };
