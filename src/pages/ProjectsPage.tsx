@@ -120,7 +120,7 @@ const ProjectsPage: React.FC = () => {
         </ProjectsGrid>
       </PageContent>
 
-      <PageContent>Add commentMore actions
+      <PageContent>
         <ProjectsGrid>
           <ProjectCard>
             <ProjectHeader>
