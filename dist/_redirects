@@ -1,9 +1,13 @@
-# Serve composition-assistant static files first - exact path matching
-/composition-assistant/index.html /composition-assistant/index.html 200
-/composition-assistant/style.css /composition-assistant/style.css 200
-/composition-assistant/script.js /composition-assistant/script.js 200
-/composition-assistant/config.js /composition-assistant/config.js 200
-/composition-assistant/ /composition-assistant/index.html 200
+# Static assets should be served first
+/composition-assistant/* /composition-assistant/:splat 200!
 
-# For all other routes, serve the React SPA
+# SPA fallback for main React app routes
+/guestbook /index.html 200
+/projects /index.html 200
+/photography /index.html 200
+/blog /index.html 200
+/blog/* /index.html 200
+/books /index.html 200
+
+# Catch-all for other routes (must be last)
 /* /index.html 200

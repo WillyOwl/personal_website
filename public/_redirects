@@ -1,0 +1,9 @@
+# Serve composition-assistant static files first - exact path matching
+/composition-assistant/index.html /composition-assistant/index.html 200
+/composition-assistant/style.css /composition-assistant/style.css 200
+/composition-assistant/script.js /composition-assistant/script.js 200
+/composition-assistant/config.js /composition-assistant/config.js 200
+/composition-assistant/ /composition-assistant/index.html 200
+
+# For all other routes, serve the React SPA
+/* /index.html 200
