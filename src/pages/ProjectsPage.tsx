@@ -104,7 +104,7 @@ const ProjectsPage: React.FC = () => {
                 The system implements a sophisticated dual-method streaming approach that combines llama-cpp-python's native streaming API with a custom token-by-token generation fallback. It supports ChatML conversation formatting with proper system prompts and dialogue history management, while incorporating memory-efficient context handling that automatically truncates conversation history to stay within model limits. The architecture includes robust content filtering specifically designed to prevent generation of irrelevant or off-topic content, particularly useful when working with multilingual models.
                 </p>
                 <p>
-                The tech stack consists of Python for core development, llama-cpp-python for model inference and GPU acceleration, and support for GGUF quantized models from popular families including Qwen, LLaMA, Mistral, and OpenChat. The system offers flexible configuration options for temperature control, context size adjustment, and GPU layer offloading.
+                The tech stack consists of Python for core development, llama-cpp-python for model inference and GPU acceleration, and support for GGUF quantized models from popular families including Qwen, LLaMA, Mistral, and OpenChat. The system offers flexible configuration options for temperature control, context size adjustment, and GPU layer offloading. This privacy-first approach ensures complete data sovereignty while delivering sophisticated AI assistance capabilities
                 </p>
               </ProjectDescription>
               <ProjectButton href="https://github.com/WillyOwl/Local_LLM" target="_blank" rel="noopener noreferrer">
