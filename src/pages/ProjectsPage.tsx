@@ -104,11 +104,11 @@ const ProjectsPage: React.FC = () => {
                 The system implements a sophisticated dual-method streaming approach that combines llama-cpp-python's native streaming API with a custom token-by-token generation fallback. It supports ChatML conversation formatting with proper system prompts and dialogue history management, while incorporating memory-efficient context handling that automatically truncates conversation history to stay within model limits. The architecture includes robust content filtering specifically designed to prevent generation of irrelevant or off-topic content, particularly useful when working with multilingual models.
                 </p>
                 <p>
-                The tech stack consists of Python for core development, llama-cpp-python for model inference and GPU acceleration, and support for GGUF quantized models from popular families including Qwen, LLaMA, Mistral, and OpenChat. The system offers flexible configuration options for temperature control, context size adjustment, and GPU layer offloading. This privacy-first approach ensures complete data sovereignty while delivering sophisticated AI assistance capabilities
+                The tech stack consists of Python for core development, llama-cpp-python for model inference and GPU acceleration, and support for GGUF quantized models from popular families including Qwen, LLaMA, Mistral, and OpenChat. The system offers flexible configuration options for temperature control, context size adjustment, and GPU layer offloading. This privacy-first approach ensures complete data sovereignty while delivering sophisticated AI assistance capabilities.
                 </p>
               </ProjectDescription>
-              <ProjectButton href="https://github.com/WillyOwl/Local_LLM" target="_blank" rel="noopener noreferrer">
-                View Github <span>→</span>
+              <ProjectButton href="/composition-assistant" target="_blank" rel="noopener noreferrer">
+                View Project <span>→</span>
               </ProjectButton>
             </ProjectHeader>
           </ProjectCard>
@@ -136,6 +136,33 @@ const ProjectsPage: React.FC = () => {
               </ProjectDescription>
               <ProjectButton href="https://github.com/WillyOwl/Slack-Bot" target="_blank" rel="noopener noreferrer">
                 View Github <span>→</span>
+              </ProjectButton>
+            </ProjectHeader>
+          </ProjectCard>
+
+        </ProjectsGrid>
+      </PageContent>
+
+      <PageContent>
+        <ProjectsGrid>
+          <ProjectCard>
+            <ProjectHeader>
+           
+              <ProjectTitle>Photography Composition Assistant</ProjectTitle>
+              <ProjectDescription>
+                <p>
+                An advanced AI-powered photography composition assistant that leverages cutting-edge computer vision, machine learning, and real-time image processing to help photographers improve their composition skills. The system combines traditional computer vision techniques with modern Vision Transformers and CNNs to provide comprehensive composition analysis and actionable suggestions.
+                </p>
+                <p>
+                The platform features real-time composition analysis with sub-200ms inference times, multi-rule detection including rule of thirds, leading lines, symmetry, depth layering, and color harmony analysis. Built with a hybrid CNN-ViT architecture using ResNet50 backbone with Vision Transformer integration, the system achieves professional-grade analysis while maintaining optimal performance through model quantization and GPU acceleration.
+                </p>
+                <p>
+                The tech stack includes Python for backend development, OpenCV and PyTorch for computer vision and deep learning, FastAPI for high-performance API services, and a responsive web interface with real-time visualization. The system supports cross-platform deployment with Docker containerization and includes comprehensive preprocessing pipelines, feature detection engines, and intelligent suggestion generation algorithms.
+                </p>
+
+              </ProjectDescription>
+              <ProjectButton href="" target="_blank" rel="noopener noreferrer">
+                
               </ProjectButton>
             </ProjectHeader>
           </ProjectCard>
