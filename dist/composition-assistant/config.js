@@ -1,4 +1,5 @@
-// Configuration for AI Composition Assistant Web Interface
+// Production Configuration for AI Composition Assistant Web Interface
+// Copy this to web/config.js for production deployment
 
 const CONFIG = {
     // API Configuration
@@ -6,11 +7,11 @@ const CONFIG = {
         // For local development
         DEV_URL: 'http://localhost:8000',
         
-        // For deployment on willyzuo.net
+        // For deployment on willyzuo.net - UPDATE THIS URL IF NEEDED
         PROD_URL: 'https://willyzuo.net/composition-assistant/api',
         
-        // Authentication token (replace with your actual token)
-        AUTH_TOKEN: 'demo-token',
+        // Authentication token - CHANGE THIS TO A SECURE TOKEN IN PRODUCTION!
+        AUTH_TOKEN: 'secure-production-token-2024',
         
         // Request timeout (in milliseconds)
         TIMEOUT: 30000
@@ -43,7 +44,7 @@ const CONFIG = {
     
     // Analytics (optional)
     ANALYTICS: {
-        TRACK_USAGE: false,
+        TRACK_USAGE: true,  // Enable in production
         GOOGLE_ANALYTICS_ID: '', // Add your GA ID if needed
     }
 };
