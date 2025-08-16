@@ -107,8 +107,8 @@ const ProjectsPage: React.FC = () => {
                 The tech stack consists of Python for core development, llama-cpp-python for model inference and GPU acceleration, and support for GGUF quantized models from popular families including Qwen, LLaMA, Mistral, and OpenChat. The system offers flexible configuration options for temperature control, context size adjustment, and GPU layer offloading. This privacy-first approach ensures complete data sovereignty while delivering sophisticated AI assistance capabilities.
                 </p>
               </ProjectDescription>
-              <ProjectButton href="/composition-assistant" target="_blank" rel="noopener noreferrer">
-                View Project <span>→</span>
+              <ProjectButton href="https://github.com/WillyOwl/Local_LLM" target="_blank" rel="noopener noreferrer">
+                View Github <span>→</span>
               </ProjectButton>
             </ProjectHeader>
           </ProjectCard>
@@ -161,8 +161,8 @@ const ProjectsPage: React.FC = () => {
                 </p>
 
               </ProjectDescription>
-              <ProjectButton href="" target="_blank" rel="noopener noreferrer">
-                
+              <ProjectButton href="/composition-assistant" target="_blank" rel="noopener noreferrer">
+                View Project <span>→</span>
               </ProjectButton>
             </ProjectHeader>
           </ProjectCard>
