@@ -95,23 +95,19 @@ const ProjectsPage: React.FC = () => {
           <ProjectCard>
             <ProjectHeader>
            
-              <ProjectTitle>Single-Cycle CPU</ProjectTitle>
+              <ProjectTitle>Local Privatized Large Model Dialogue</ProjectTitle>
               <ProjectDescription>
                 <p>
-                  This project involved designing and implementing a simulator for a single-cycle CPU using the C programming language.
+                This project is a robust private offline dialogue system designed for local deployment of quantized Large Language Models using llama-cpp-python. The system enables users to run powerful AI conversations entirely on their own hardware without requiring external API dependencies or cloud services. It features advanced streaming text generation with real-time response display, intelligent content filtering to maintain conversation quality, and comprehensive error handling with automatic fallback mechanisms to ensure reliable operation.
                 </p>
                 <p>
-                  The simulator replicates key functionalities of MIPS processors, focusing on instruction execution and data handling.
+                The system implements a sophisticated dual-method streaming approach that combines llama-cpp-python's native streaming API with a custom token-by-token generation fallback. It supports ChatML conversation formatting with proper system prompts and dialogue history management, while incorporating memory-efficient context handling that automatically truncates conversation history to stay within model limits. The architecture includes robust content filtering specifically designed to prevent generation of irrelevant or off-topic content, particularly useful when working with multilingual models.
                 </p>
                 <p>
-                  It incorporates the principles of datapath and control signals, demonstrating how data flows through CPU components and how control signals coordinate operations.
-                </p>
-                <p>
-                  By leveraging bitwise operations, the simulator accurately emulates the logical and arithmetic processes of a real CPU,
-                  offering a realistic representation of hardware-level computations.
+                The tech stack consists of Python for core development, llama-cpp-python for model inference and GPU acceleration, and support for GGUF quantized models from popular families including Qwen, LLaMA, Mistral, and OpenChat. The system offers flexible configuration options for temperature control, context size adjustment, and GPU layer offloading, making it adaptable to various hardware configurations from modest laptops to high-performance workstations. This privacy-first approach ensures complete data sovereignty while delivering sophisticated AI assistance capabilities.
                 </p>
               </ProjectDescription>
-              <ProjectButton href="https://github.com/WillyOwl/SE230-231-Computer-Organization/tree/main/Lab/1st%20lab" target="_blank" rel="noopener noreferrer">
+              <ProjectButton href="https://github.com/WillyOwl/Local_LLM" target="_blank" rel="noopener noreferrer">
                 View Github <span>→</span>
               </ProjectButton>
             </ProjectHeader>
