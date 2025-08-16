@@ -189,7 +189,7 @@ const HomePage: React.FC = () => {
         <SectionTitle>About me</SectionTitle>
         <AboutText>
         Hi, I'm Willy. I am currently a 3rd-year undergrad student studying Honor Computer Science at the University of Alberta. 
-        My interests lie in Machine Learning, Reinforcement Learning, and Software Development. 
+        My interests lie in Machine Learning, Reinforcement Learning, and Large Language Models. 
         I am now working on a project about Robotics and Reinforcement Learning as a research assistant with professor Rupam Mahmood's team.
         </AboutText>
         <AboutText>
