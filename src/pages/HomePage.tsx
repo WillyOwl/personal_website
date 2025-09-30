@@ -180,7 +180,7 @@ const HomePage: React.FC = () => {
         
         <SocialLinks 
           githubUrl="https://github.com/WillyOwl"
-          linkedinUrl="https://www.linkedin.com/in/willy-zuo-66935632a/"
+          linkedinUrl="https://www.linkedin.com/in/yiyang-zuo-66935632a/"
           email="zuowilly@gmail.com"
         />
       </HeroSection>
