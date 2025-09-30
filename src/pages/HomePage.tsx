@@ -189,8 +189,11 @@ const HomePage: React.FC = () => {
         <SectionTitle>About me</SectionTitle>
         <AboutText>
         Hi, I'm Willy. I am currently a 3rd-year undergrad student studying Honor Computer Science at the University of Alberta. 
-        My interests lie in Machine Learning, Reinforcement Learning, and Large Language Models. 
-        I am now working on a project about Robotics and Reinforcement Learning as a research assistant with professor Rupam Mahmood's team.
+        My interests lie in Machine Learning with optimization, and Large Language Models. 
+        I am now conducting a research project in a single semester under Dr. Vadim Bulitko (RLAI Lab, University of Alberta)
+        where i am programmatically recreating the Evolutionary Reinforcement Learning (ERL) testbed (Ackley & Littman, 1991),
+        investigating methods to improve synthesized program explainability, and using transformer-guided variation to enhance
+        the efficiency of program synthesis.
         </AboutText>
         <AboutText>
         I am always passionate about developing staffs to solve problems around me when I am free from academics. My hobbies include
